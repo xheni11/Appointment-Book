@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4F2A4E3-E103-4835-8C25-6F99BC1727B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AppointmentBook_Exercise7</RootNamespace>
+    <AssemblyName>AppointmentBook_Exercise7</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dataAccess\GetAllUsers.cs" />
+    <Compile Include="dataAccess\IGetData.cs" />
+    <Compile Include="dataAccess\Repository.cs" />
+    <Compile Include="enums\MinutesReminder.cs" />
+    <Compile Include="enums\StatisticsEnum.cs" />
+    <Compile Include="model\AppointmentData.cs" />
+    <Compile Include="model\ReminderDate.cs" />
+    <Compile Include="statistics\Statistics.cs" />
+    <Compile Include="winForms\AddReminderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\AddReminderForm.Designer.cs">
+      <DependentUpon>AddReminderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\CanceledAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\CanceledAppointmentForm.Designer.cs">
+      <DependentUpon>CanceledAppointmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\APPOINTMENT.cs" />
+    <Compile Include="context\AppointmentContext.cs" />
+    <Compile Include="model\ATTENDEES_APPOINTMENT.cs" />
+    <Compile Include="model\LOCATION.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="model\REMINDER.cs" />
+    <Compile Include="model\ROLE.cs" />
+    <Compile Include="model\USER.cs" />
+    <Compile Include="context\SessionContext.cs" />
+    <Compile Include="winForms\ManageLocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\ManageLocationsForm.Designer.cs">
+      <DependentUpon>ManageLocationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\ManagerAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\ManagerAppointments.Designer.cs">
+      <DependentUpon>ManagerAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\ManageUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\ManageUsersForm.Designer.cs">
+      <DependentUpon>ManageUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\UserAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\UserAppointmentForm.Designer.cs">
+      <DependentUpon>UserAppointmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="winForms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winForms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="winForms\AddReminderForm.resx">
+      <DependentUpon>AddReminderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\CanceledAppointmentForm.resx">
+      <DependentUpon>CanceledAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="winForms\ManageLocationsForm.resx">
+      <DependentUpon>ManageLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\ManagerAppointments.resx">
+      <DependentUpon>ManagerAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\ManageUsersForm.resx">
+      <DependentUpon>ManageUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\UserAppointmentForm.resx">
+      <DependentUpon>UserAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winForms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\APPOINTMENT.datasource" />
+    <None Include="Properties\DataSources\AppointmentBook_Exercise7.dataAccess.Repository`1[].datasource" />
+    <None Include="Properties\DataSources\LOCATION.datasource" />
+    <None Include="Properties\DataSources\ROLE.datasource" />
+    <None Include="Properties\DataSources\USER.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
